@@ -29,7 +29,8 @@ const LoginwithEmail = () => {
             }).toString(); // Convert user object to query string
             console.log("queryParams", queryParams)
 
-            const response = await fetch(`http://localhost:3000/login?${queryParams}`, {
+            //const response = await fetch(`http://localhost:3000/login?${queryParams}`, {
+            const response = await fetch(`http://backend-container:4444/login?${queryParams}`, {
                 method: "GET",
             })
             const data = await response.json()
@@ -72,7 +73,8 @@ const LoginwithEmail = () => {
             }; // Convert user object to query string
             console.log("queryParams", queryParams)
 
-            const response = await fetch("http://localhost:3000/signup", {
+            //const response = await fetch("http://localhost:3000/signup", {
+            const response = await fetch("http://backend-container:4444/signup", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
