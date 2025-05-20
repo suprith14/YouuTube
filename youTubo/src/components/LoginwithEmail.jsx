@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import { userInfo } from '../store/userSlice';
 import { toggleSignInnn } from '../store/userSlice';
 
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:4444";
+
+
 const LoginwithEmail = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -30,7 +33,7 @@ const LoginwithEmail = () => {
             console.log("queryParams", queryParams)
 
             //const response = await fetch(`http://localhost:3000/login?${queryParams}`, {
-            const response = await fetch(`http://backend-container:4444/login?${queryParams}`, {
+            const response = await fetch(`${API_URL}/login?${queryParams}`, {
                 method: "GET",
             })
             const data = await response.json()
@@ -74,7 +77,7 @@ const LoginwithEmail = () => {
             console.log("queryParams", queryParams)
 
             //const response = await fetch("http://localhost:3000/signup", {
-            const response = await fetch("http://backend-container:4444/signup", {
+            const response = await fetch(`${API_URL}/signup`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
