@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { userInfo } from '../store/userSlice';
 import { toggleSignInnn } from '../store/userSlice';
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:4444";
+const API_URL = import.meta.env.VITE_API_URL || "http://192.168.31.230:4444";
+
 
 
 const LoginwithEmail = () => {
